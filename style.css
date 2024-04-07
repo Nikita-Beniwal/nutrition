@@ -2,8 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #FFF2D8; /* Cream background */
-    color: #113946; /* Dark teal text color */
+    background-color: #FFF2D8;
+    color: #113946;
 }
 
 .container {
@@ -26,17 +26,17 @@ body, html {
 
 .body-image {
     flex: 1;
-    text-align: center; /* Center the SVG image */
+    text-align: center;
 }
 
 .food-selector label {
     font-weight: bold;
-    color: #113946; /* Dark teal color */
+    color: #113946;
 }
 
 .information h2, .information p {
     margin: 20px 0;
-    color: #113946; /* Dark teal color for information text */
+    color: #113946;
 }
 
 /* Styling for the dropdown and benefits text */
@@ -46,7 +46,7 @@ select, .information p {
     color: #303030; /* Text color for readability */
     padding: 10px;
     border-radius: 20px;
-    margin-bottom: 20px; /* Margin for spacing */
+    margin-bottom: 20px;
 }
 
 /* Hover effects for interactive elements */
