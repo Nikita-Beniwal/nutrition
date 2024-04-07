@@ -1,0 +1,83 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFF2D8; /* Cream background */
+    color: #113946; /* Dark teal text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.selections {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.body-image {
+    flex: 1;
+    text-align: center; /* Center the SVG image */
+}
+
+.food-selector label {
+    font-weight: bold;
+    color: #113946; /* Dark teal color */
+}
+
+.information h2, .information p {
+    margin: 20px 0;
+    color: #113946; /* Dark teal color for information text */
+}
+
+/* Styling for the dropdown and benefits text */
+select, .information p {
+    background-color: #FFD966; /* Yellow background for dropdown */
+    border: 1px solid #BCA37F; /* Border color */
+    color: #303030; /* Text color for readability */
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px; /* Margin for spacing */
+}
+
+/* Hover effects for interactive elements */
+select:hover, .information p:hover {
+    background-color: #EAD7BB; /* Hover background color */
+    border-color: #BCA37F; /* Hover border color */
+}
+
+/* Highlight styling for the SVG parts */
+.highlight {
+    fill: #6DAFE2; /* Highlight color */
+}
+
+/* Additional styles for responsiveness and interaction */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .body-image, .selections {
+        margin: auto;
+        max-width: 100%;
+    }
+}
+
+/* Cursor pointer on SVG parts for interactivity */
+svg path:hover {
+    cursor: pointer;
+}
+
+/* Focus styles for accessibility */
+select:focus, .information p:focus {
+    outline: 2px solid #BCA37F; /* Focus outline color */
+}

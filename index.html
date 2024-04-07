@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Explore the benefits of healthy eating on human body</h1>
+    <div class="content">
+        <div class="selections">
+            <div class="food-selector">
+                <label for="food-select">Select a Food:</label>
+                <select id="food-select"> </select>
+            </div>
+
+            <div class="information">
+                <h2>Benefits on the Body Parts</h2>
+                <p id="benefits-text">Select a food to see its benefits.</p>
+            </div>
+        </div>
+        <div class="body-image">
+            <img src="human-body.svg" alt="Human Body" id="body-svg">
+        </div>
+        <div id="organ-container">
+            <!-- Organ SVGs will be dynamically loaded here based on the selected food -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
