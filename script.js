@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
         { "name": "Papaya", "bodyPartsAffected": ["Eyes", "Digestion", "ImmuneSystem"] },
     ];
 
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.textContent = "Select a food";
+    defaultOption.selected = true; 
+    defaultOption.disabled = true;
+    foodSelect.appendChild(defaultOption);
+
     // Populate the dropdown with food options
     foods.forEach(food => {
         const option = document.createElement('option');
@@ -60,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function highlightBodyParts(partsAffected) {
         clearHighlights(); // First, clear existing highlights
         partsAffected.forEach(part => {
-            const bodyPartElement = document.getElementById(part); // Assumes body part IDs are correctly assigned in the SVG
+            const bodyPartElement = document.getElementById(part);
             if (bodyPartElement) {
                 bodyPartElement.classList.add('highlight');
             }
@@ -70,14 +77,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for changes in the food selection dropdown
     foodSelect.addEventListener('change', function() {
         const selectedFoodName = this.value;
-        const selectedFood = foods.find(food => food.name === selectedFoodName);
-
-        if (selectedFood) {
-            // Update benefits text
-            benefitsText.textContent = `${selectedFood.bodyPartsAffected.join(', ')}`;
-
-            // Highlight body parts
-            highlightBodyParts(selectedFood.bodyPartsAffected);
+        if (selectedFoodName !== "") { // Check if a valid food is selected
+            const selectedFood = foods.find(food => food.name === selectedFoodName);
+            if (selectedFood) {
+                // Update benefits text
+                benefitsText.textContent = `${selectedFood.bodyPartsAffected.join(', ')}`;
+                // Highlight body parts
+                highlightBodyParts(selectedFood.bodyPartsAffected);
+            }
+        } else {
+            // Clear benefits text and highlights if "Select a food" is somehow selected again
+            benefitsText.textContent = "";
+            clearHighlights();
         }
     });
 });
