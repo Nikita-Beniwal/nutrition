@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const defaultOption = document.createElement('option');
     defaultOption.value = "";
     defaultOption.textContent = "Select a food";
-    defaultOption.selected = true; 
+    defaultOption.selected = true;
     defaultOption.disabled = true;
     foodSelect.appendChild(defaultOption);
 
