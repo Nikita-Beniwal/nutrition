@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const foodSelect = document.getElementById('food-select');
     const benefitsText = document.getElementById('benefits-text');
+    const fullBodyContainer = document.getElementById('full-body-container');
+    const svgContainer = document.getElementById('svg-container');
 
+    showFullBodySvg();
     const foods = [
         { "name": "Apple", "bodyPartsAffected": ["Brain", "Heart", "Lungs"] },
         { "name": "Banana", "bodyPartsAffected": ["Heart", "BloodPressure", "Digestion"] },
@@ -41,6 +44,32 @@ document.addEventListener('DOMContentLoaded', function() {
         { "name": "Papaya", "bodyPartsAffected": ["Eyes", "Digestion", "ImmuneSystem"] },
     ];
 
+    const organMap = {
+        "Brain": "Brain.svg",
+        "Heart": "Heart.svg",
+        "Lungs": "Respiratory System.svg",
+        "BloodPressure": "Circulatory System.svg",
+        "Digestion": "Digestive System.svg",
+        "ImmuneSystem": "Immune System.svg",
+        "Eyes": "Eyes.svg",
+        "Skin": "Skin.svg",
+        "Kidneys": "Kidneys & Bladder.svg",
+        "Bladder": "Kidneys & Bladder.svg",
+        "Stomach": "Stomach.svg",
+        "Thymus": "Thymus.svg",
+        "Appendix": "Appendix.svg",
+        "Liver": "Liver & Gallbladder.svg",
+        "Gallbladder": "Liver & Gallbladder.svg",
+        "Pancreas": "Pancreas.svg",
+        "SmallIntestine": "Small Intestine.svg",
+        "LargeIntestine": "Large Intestine.svg",
+        "Spleen": "Spleen.svg",
+        "Bones": "Bones.svg",
+        "Thyroid": "Thyroid.svg",
+        "MaleEndocrine": "Male Endocrine System.svg",
+        "FemaleEndocrine": "Female Endocrine System.svg"
+    };
+
     const defaultOption = document.createElement('option');
     defaultOption.value = "";
     defaultOption.textContent = "Select a food";
@@ -48,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     defaultOption.disabled = true;
     foodSelect.appendChild(defaultOption);
 
-    // Populate the dropdown with food options
+    // Populate dropdown with food options
     foods.forEach(food => {
         const option = document.createElement('option');
         option.value = food.name;
@@ -56,39 +85,32 @@ document.addEventListener('DOMContentLoaded', function() {
         foodSelect.appendChild(option);
     });
 
-    // Function to clear all highlights from the body SVG
-    function clearHighlights() {
-        document.querySelectorAll('.highlight').forEach(part => {
-            part.classList.remove('highlight');
-        });
-    }
-
-    // Function to highlight body parts affected by the selected food
-    function highlightBodyParts(partsAffected) {
-        clearHighlights(); // First, clear existing highlights
-        partsAffected.forEach(part => {
-            const bodyPartElement = document.getElementById(part);
-            if (bodyPartElement) {
-                bodyPartElement.classList.add('highlight');
-            }
-        });
-    }
-
-    // Listen for changes in the food selection dropdown
     foodSelect.addEventListener('change', function() {
         const selectedFoodName = this.value;
-        if (selectedFoodName !== "") { // Check if a valid food is selected
-            const selectedFood = foods.find(food => food.name === selectedFoodName);
-            if (selectedFood) {
-                // Update benefits text
-                benefitsText.textContent = `${selectedFood.bodyPartsAffected.join(', ')}`;
-                // Highlight body parts
-                highlightBodyParts(selectedFood.bodyPartsAffected);
-            }
+        const selectedFood = foods.find(food => food.name === selectedFoodName);
+        if (selectedFood) {
+            benefitsText.textContent = `${selectedFood.bodyPartsAffected.join(', ')}`;
+            updateSvgDisplay(selectedFood.bodyPartsAffected, organMap);
         } else {
-            // Clear benefits text and highlights if "Select a food" is somehow selected again
-            benefitsText.textContent = "";
-            clearHighlights();
+            showFullBodySvg();
         }
     });
+
+    function updateSvgDisplay(partsAffected, organMap) {
+        svgContainer.innerHTML = ''; // Clear previous SVGs
+        partsAffected.forEach(part => {
+            const svgFileName = organMap[part];
+            const img = document.createElement('img');
+            img.src = `BodyOrgans/${svgFileName}`;
+            img.alt = part;
+            svgContainer.appendChild(img);
+        });
+        svgContainer.style.display = 'flex'; // Ensure SVG container is visible
+    }
+
+    function showFullBodySvg() {
+        document.getElementById('svg-container').style.display = 'none';
+        document.querySelector('.full-body-container').style.display = 'flex';
+    }
+
 });
