@@ -40,37 +40,37 @@ body, html {
 }
 
 select {
-    background-color: #BCA37F;
+    background-color: #fff;
     border: 1px solid #BCA37F;
-    color: #fff;
+    color: #303030;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-
+/* Hover effect for the dropdown */
 select:hover {
-    background-color: transparent;
+    background-color: #EAD7BB;
     color: #333;
     border-color: #BCA37F;
 }
 
 .information p {
-    background-color: #fff;
+    background-color: #BCA37F;
+    color: #fff;
     border: 1px solid #BCA37F;
-    color: #303030;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
 .information p:hover {
-    background-color: #EAD7BB;
+    background-color: transparent;
+    color: #333;
     border-color: #BCA37F;
-    color: #303030;
 }
 
 /* Highlight styling for the SVG parts */
