@@ -39,20 +39,38 @@ body, html {
     color: #113946;
 }
 
-/* Styling for the dropdown and benefits text */
-select, .information p {
-    background-color: #FFD966; /* Yellow background for dropdown */
-    border: 1px solid #BCA37F; /* Border color */
-    color: #303030; /* Text color for readability */
-    padding: 10px;
-    border-radius: 20px;
+select {
+    background-color: #BCA37F;
+    border: 1px solid #BCA37F;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Hover effects for interactive elements */
-select:hover, .information p:hover {
-    background-color: #EAD7BB; /* Hover background color */
-    border-color: #BCA37F; /* Hover border color */
+
+select:hover {
+    background-color: transparent;
+    color: #333;
+    border-color: #BCA37F;
+}
+
+.information p {
+    background-color: #fff;
+    border: 1px solid #BCA37F;
+    color: #303030;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.information p:hover {
+    background-color: #EAD7BB;
+    border-color: #BCA37F;
+    color: #303030;
 }
 
 /* Highlight styling for the SVG parts */
