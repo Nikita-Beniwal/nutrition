@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "LargeIntestine": "Large Intestine.svg",
         "Spleen": "Spleen.svg",
         "Bones": "Bones.svg",
+        "Prostate": "Excretory.svg",
         "Muscles": "Muscles.svg",
         "Prostate": "Prostate",
         "Thyroid": "Thyroid.svg",
