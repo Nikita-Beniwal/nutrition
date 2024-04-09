@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { "name": "Cucumber", "bodyPartsAffected": ["Kidneys", "Skin"] },
         { "name": "Lettuce", "bodyPartsAffected": ["Kidneys"] },
         { "name": "Lemon", "bodyPartsAffected": ["Kidneys", "ImmuneSystem", "Skin"] },
-        { "name": "Grapefruit", "bodyPartsAffected": ["ImmuneSystem", "Skin", "WeightManagement"] },
+        { "name": "Grapefruit", "bodyPartsAffected": ["ImmuneSystem", "Skin", "Brain"] },
         { "name": "Cranberries", "bodyPartsAffected": ["Bladder", "Kidneys", "Heart"] },
         { "name": "Watermelon", "bodyPartsAffected": ["Kidneys", "Heart", "Muscles"] },
         { "name": "Pomegranate", "bodyPartsAffected": ["Heart", "Brain", "Prostate"] },
