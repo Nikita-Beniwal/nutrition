@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         "Bones": "Bones.svg",
         "Prostate": "Excretory System.svg",
         "Muscles": "Muscles.svg",
-        "Prostate": "Prostate",
         "Thyroid": "Thyroid.svg",
         "MaleEndocrine": "Male Endocrine System.svg",
         "FemaleEndocrine": "Female Endocrine System.svg"
