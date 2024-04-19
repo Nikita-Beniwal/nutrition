@@ -1,9 +1,12 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #FFF2D8; /* Aligning with the cream background */
-    color: #113946; /* Dark teal color for text */
+    font-family: 'Jersey 20', sans-serif;
+    background-color: #FFF2D8;
+    color: #113946;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
